@@ -1,0 +1,132 @@
+/* color scheme sourced from http://khroma.co/generator/
+:root {
+    --outer-space: #33393f;
+    --bright-turquoise: #2aefcb;
+    --gin: #e0eae4;
+    --heliotrope: #e866ec;
+  }
+  
+  /* set content highlight color and background 
+  ::selection {
+    background-color: var(--bright-turquoise);
+    color: var(--outer-space);
+  } */
+
+html {
+    /* set 1 rem to 10 px */
+    font-size: 62.5%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+        Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+    font-size: 1.75rem;
+    line-height: 1.5;
+
+    display: flex;
+    flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin-bottom: 0.625rem;
+    color: black;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+h1 {
+    /* 4rem = 40px (4 * 10px) */
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.5rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2.5rem;
+}
+
+h5 {
+    font-size: 2rem;
+}
+
+h6 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+header {
+    padding: 2.5rem;
+    text-align: center;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    background-color: #13293d;
+    color: #fff;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    min-width: 300px;
+}
+
+li {
+    display: inline;
+    justify-content: space-between;
+}
+
+main {
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: bisque;
+}
+
+img {
+    margin: 30px;
+}
+
+.about {
+    display: flex;
+    padding: 15px;
+    background-color: antiquewhite;
+}
+
+.work {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: antiquewhite;
+}
+
+.card-column {
+    flex: 1 0 100%;
+    padding: 1.5rem;
+    /* when the screen resizes, make it so our columns don't jump in size */
+    transition: flex-basis 500ms linear;
+    margin-bottom: 1.5rem;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100%;
+    padding: 2rem;
+}
