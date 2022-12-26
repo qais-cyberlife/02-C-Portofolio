@@ -12,6 +12,7 @@
     color: var(--outer-space);
   } */
 
+
 html {
     /* set 1 rem to 10 px */
     font-size: 62.5%;
@@ -75,7 +76,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1%;
-    background-color: #13293d;
+    background-color: #181818;
     color: #fff;
 }
 
@@ -83,25 +84,51 @@ nav ul {
     display: flex;
     justify-content: space-between;
     min-width: 300px;
+
 }
 
 li {
     display: inline;
     justify-content: space-between;
+    padding: 1rem 2.5rem;
+
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 
+li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #b88725;
+    transition: 0.4s;
+}
 main {
 
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: bisque;
 }
 
 img {
     margin: 30px;
 }
 
+.justify-center{
+    justify-items: center;
+}
+
+.logo{ 
+    height: 98px;
+    width: 100px;
+    object-fit: cover;
+}
+.hero{
+    height: 700px;
+    width: 100%;
+    background-image:url(../images/personal-pic.jpg) ;
+    background-size:cover;
+    background-position-y: 175px ;
+}
 .about {
     display: flex;
     padding: 15px;
@@ -110,23 +137,64 @@ img {
 
 .work {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
     padding: 15px;
     background-color: antiquewhite;
 }
 
-.card-column {
-    flex: 1 0 100%;
-    padding: 1.5rem;
-    /* when the screen resizes, make it so our columns don't jump in size */
-    transition: flex-basis 500ms linear;
-    margin-bottom: 1.5rem;
+.card{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    width: 100%;*/
+    padding: 2rem;
 }
 
-.card{
+.contact {
+    background-color:bisque ;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    text-align: center;
+    justify-content: center;
     min-height: 100%;
     padding: 2rem;
 }
+
+.contact > *{
+    margin: 1rem;
+}
+
+.socials{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.socials > img {
+    border-radius: 100%;
+}
+
+
+/* @media screen and (min-width: 768px) {
+     /* on tablets, set columns to only be 50% of the width and not grow */
+  /* .card-column { 
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  /* select the last child to grow to full width if it has space to grow */
+  /* .card-column:last-child {
+    flex-grow: 1;
+  }
+} */
+
+/* media query for larger screens */
+/* @media screen and (min-width: 992px) {
+    .card-column {
+      flex: 0 0 33.333%;
+      max-width: 33.333%;
+    }
+}
+   */ 
