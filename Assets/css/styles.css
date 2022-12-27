@@ -88,6 +88,7 @@ header nav ul {
 }
 
 header li {
+    color: #fff;
     display: inline;
     justify-content: space-between;
     padding: 1rem 2.5rem;
@@ -101,7 +102,11 @@ li:hover {
     cursor: pointer;
     color: #b88725;
     transition: 0.4s;
+
 }
+
+a:visited{ color: white }
+
 main {
 
     display: flex;
@@ -109,12 +114,12 @@ main {
     flex-direction: row;
 }
 
-main h1{
+main h1 {
     margin: 20px 0px 20px;
     font-size: 75px;
 }
 
-main button{
+main button {
     margin: 20px 0px 20px;
 }
 
@@ -122,7 +127,7 @@ img {
     margin: 30px;
 }
 
-button{
+button {
     background-color: #b88725;
     color: white;
     text-decoration: none;
@@ -133,35 +138,37 @@ button{
     transition: transform .4s;
 }
 
-button:hover{
+button:hover {
     transform: scale(1.2);
     cursor: pointer;
 }
 
-.justify-center{
+.justify-center {
     justify-items: center;
 }
 
-.logo{ 
+.logo {
     height: 98px;
     width: 100px;
     object-fit: cover;
 }
-.hero{
+
+#hero {
     height: 700px;
     width: 100%;
-    background-image:url(../images/personal-pic.jpg) ;
-    background-size:cover;
-    background-position-y: 175px ;
+    background-image: url(../images/personal-pic.jpg);
+    background-size: cover;
+    background-position-y: 175px;
 }
 
-.hello{
+.hello {
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 8%;
 }
 
-.about {
+#about {
+    min-height: 850px;
     display: flex;
     padding: 15px;
     background-color: antiquewhite;
@@ -171,11 +178,59 @@ button:hover{
     padding: 8%;
 }
 
-.about h2{
-  font-size: 75px;
+
+.accordion {
+    max-width: 800px;
 }
 
-.about li{
+.accordion .contentBx {
+    position: relative;
+    margin: 10px 20px;
+}
+
+.accordion .contentBx .label {
+    position: relative;
+    padding: 1rem;
+    background-color: #b88725;
+    color: white;
+    cursor: pointer;
+}
+
+.accordion .contentBx .label::before 
+   {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+   }
+
+   .accordion .contentBx.active .label::before 
+   {
+    content: '-';
+   }
+
+   .accordion .contentBx .content {
+    position: relative;
+    background: #181818 ;
+    color: white;
+    height: 0;
+    overflow: hidden;
+    transition: .5s;
+    overflow-y: auto;
+}
+
+.accordion .contentBx.active .content {
+    height: 150px;
+    padding: 10px;
+}
+
+.about h2 {
+    font-size: 75px;
+}
+
+.about li {
     text-decoration: underline;
     color: white;
     background-color: #181818;
@@ -186,24 +241,25 @@ button:hover{
     font-size: 2.5rem;
     font-weight: 700;
 }
-.hide{
+
+.hide {
     display: none;
 }
 
 .about li:hover {
     color: #b88725;
     transition: 1s;
-    }
+}
 
-.about li:hover + .hide{
-display: block;
-transition: 1s;
+.about li:hover+.hide {
+    display: block;
+    transition: 1s;
 }
 
 
 
 
-.work {
+#work {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -213,16 +269,58 @@ transition: 1s;
     background-color: antiquewhite;
 }
 
-.card{
-    /* display: flex;
-    flex-direction: column;
-    justify-content: flex-start; 
-    width: 100%;*/
-    padding: 2rem;
+.container{
+    display: flex;
 }
 
-.contact {
-    background-color:bisque ;
+.card {
+    margin: 2rem;
+    border-radius: 1.5rem;
+    border: 2px green solid;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    width: 700px;
+    height: 300px;
+    box-shadow: 5px 5px 20px black;
+ overflow: hidden;
+}
+
+.intro{
+    max-width: 698px;
+    height: 300px;
+    border-radius: 1.5rem;
+    padding: 6px;
+    box-sizing: border-box;
+    position: absolute;
+    background-color: #b88725dd ;
+    color: white;
+    opacity: 0;
+}
+
+.intro h1{
+    margin: 1rem;
+    font-size: 4rem;
+    color: white;
+}
+
+.intro p{
+    margin: 2rem;
+    font-size:2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.card:hover .intro{
+    cursor: pointer;
+  opacity: 100;
+   transition: 0.4s;
+}
+
+
+#contact {
+    background-color: bisque;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -231,29 +329,39 @@ transition: 1s;
     padding: 2rem;
 }
 
-.contact > *{
+#contact>* {
     margin: 1rem;
 }
 
-.socials{
+.socials {
     display: flex;
     align-items: end;
     justify-content: center;
 }
 
-.socials > img {
+.socials img {
     border-radius: 100%;
+    width: 48px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.socials img:hover {
+    border-radius: 100%;
+    width: 60px;
+    translate: 0x 30px;
+    transition: .4s;
+    cursor: pointer;
 }
 
 
 /* @media screen and (min-width: 768px) {
      /* on tablets, set columns to only be 50% of the width and not grow */
-  /* .card-column { 
+/* .card-column { 
     flex: 0 0 50%;
     max-width: 50%;
   }
   /* select the last child to grow to full width if it has space to grow */
-  /* .card-column:last-child {
+/* .card-column:last-child {
     flex-grow: 1;
   }
 } */
@@ -265,4 +373,4 @@ transition: 1s;
       max-width: 33.333%;
     }
 }
-   */ 
+   */
